@@ -4,7 +4,7 @@ from tkinter.colorchooser import askcolor
 from tkinter import ttk
 import tkinter as tk
 
-# Not, let's define the root and the windown configuration like title, size, etc
+# Now, let's define the root and the windown configuration like title, size, etc
 root = Tk()
 root.title("White Board")
 root.geometry("1050*570+150+50")
