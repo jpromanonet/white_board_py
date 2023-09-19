@@ -26,7 +26,7 @@ def locate_xy(work):
 def addLine(work):
     global current_x, current_y
 
-    canvas.create_line((current_x,current_y, work.x, work.y),width=2, fill=color)
+    canvas.create_line((current_x,current_y, work.x, work.y),width=get_current_value(), fill=color, capstyle=ROUND,smooth=TRUE)
     current_x,current_y = work.x, work.y
 
 # Color picker
@@ -101,6 +101,21 @@ canvas.place(x=100,y=10)
 # Now let's bind the canvas with the colors and buttons
 canvas.bind("<Button-1>", locate_xy)
 canvas.bind("<B1-Motion>", addLine)
+
+# Line slider
+def get_current_value():
+    return '{: .2f}'.format(current_value.get())
+
+def slider_changed(event):
+    value_label.configure(text=get_current_value())
+
+current_value = tk.DoubleVar()
+slider = ttk.Scale(root, from_=0, to=100,orient='horizontal', command=slider_changed, variable=current_value)
+slider.place(x=30, y=530)
+
+## Value label
+value_label = ttk.Label(root, text=get_current_value())
+value_label.place(x=27,y=550)
 
 # Run the app
 root.mainloop()
