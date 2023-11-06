@@ -28,7 +28,7 @@ def change_line_width(value):
     line_width = int(value)
 
 root = tk.Tk()
-root.title("Enhanced Drawing App")
+root.title("Whiteboard App")
 
 canvas = tk.Canvas(root, bg="white")
 canvas.pack(fill="both", expand=True)
