@@ -60,4 +60,9 @@ canvas.bind("<Button-1>", start_drawing)
 canvas.bind("<B1-Motion>", draw)
 canvas.bind("<ButtonRelease-1>", stop_drawing)
 
+text_widget_label = tk.Label(controls_frame, text="Notes:")
+text_widget_label.pack(side="top", padx=5, pady=5)
+text_widget = tk.Text(controls_frame, height=6, width=120)
+text_widget.pack(side="left", padx=5, pady=5)
+
 root.mainloop()
