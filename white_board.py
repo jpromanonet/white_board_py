@@ -19,7 +19,7 @@ def stop_drawing(event):
 
 def change_pen_color():
     global drawing_color
-    color = askcolor()[1]
+    color = askcolor(drawing_color)[1]
     if color:
         drawing_color = color
 
